@@ -22,6 +22,11 @@ cd log_analysis
 python3 report.py
 ```
 
+Go to http://localhost:8000/
+
+![Demo](https://github.com/rajashekar/log_analysis/blob/master/demo.png)
+
+
 Sample output - 
 ```
 What are the most popular three articles of all time?
