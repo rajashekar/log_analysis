@@ -1,11 +1,22 @@
 import psycopg2
+import sys
 
 DBNAME = "news"
 
 
+def connect(database_name):
+    """Connect to the database.  Returns a database connection."""
+    try:
+        db = psycopg2.connect(database=database_name)
+        return db
+    except psycopg2.Error as e:
+        print("Unable to connect to database")
+        sys.exit(1)
+
+
 def get_most_3pop_articles():
     """What are the most popular three articles of all time?"""
-    conn = psycopg2.connect(database=DBNAME)
+    conn = connect(DBNAME)
     cur = conn.cursor()
     cur.execute("""SELECT a.title,b.viewcount
                 FROM articles a,
@@ -24,7 +35,7 @@ def get_most_3pop_articles():
 
 def get_most_pop_authors():
     """Who are the most popular article authors of all time?"""
-    conn = psycopg2.connect(database=DBNAME)
+    conn = connect(DBNAME))
     cur = conn.cursor()
     cur.execute("""SELECT c.name, sum(b.viewcount) AS totalviews
                     FROM
@@ -47,7 +58,7 @@ def get_most_pop_authors():
 
 def get_days_with_more_errors():
     """On which days did more than 1% of requests lead to errors?"""
-    conn = psycopg2.connect(database=DBNAME)
+    conn = connect(DBNAME))
     cur = conn.cursor()
     cur.execute("""SELECT to_char(b.time, 'Mon DD, YYYY') AS date,
                     round(
