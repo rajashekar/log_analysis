@@ -1,5 +1,5 @@
 # Log Analysis
-This project is done as part of Udacity Fullstack Developer course. The purpose of the project is to understand the concepts of SQL database and how to connect and retreive/modify data from database using Python DB-API. In this project, [PostgreSQL](https://www.postgresql.org/about/) is used and to connect from [Python3](https://www.python.org/) DB API library [Psycogp](http://initd.org/psycopg/) is used.
+The purpose of the project is to understand the concepts of SQL database and how to connect and retreive/modify data from database using Python DB-API. In this project, [PostgreSQL](https://www.postgresql.org/about/) is used and to connect from [Python3](https://www.python.org/) DB API library [Psycogp](http://initd.org/psycopg/) is used.
 
 ## Getting Started
 ### Prerequesites
